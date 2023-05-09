@@ -49,7 +49,7 @@ namespace GameCore.CustomExtensions.UIAnimationsPresets.Button
             if (initialized)
                 return;
 
-            initialScale = targetButton.transform.localScale;
+            initialScale = transform.localScale;
             initialInteractiveState = targetButton.interactable;
             
             initialized = true;
@@ -66,13 +66,13 @@ namespace GameCore.CustomExtensions.UIAnimationsPresets.Button
             if (autoChangeInteractable)
                 targetButton.interactable = false;
 
-            activePlayTween = targetButton.transform.DOScale(targetScale, halfDuration).SetEase(animationEase).
+            activePlayTween = transform.DOScale(targetScale, halfDuration).SetEase(animationEase).
                 SetUpdate(true).OnComplete(() =>
                 {
                     completeInPartCallback?.Invoke();
                     Ease outerAnimEase = CustomTweenExtensions.FindOppositeEase(animationEase);
 
-                    activePlayTween = targetButton.transform.DOScale(initialScale, halfDuration).SetEase(outerAnimEase).
+                    activePlayTween = transform.DOScale(initialScale, halfDuration).SetEase(outerAnimEase).
                         SetUpdate(true).OnComplete(() =>
                         {
                             animCompleteCallback?.Invoke();
@@ -108,7 +108,7 @@ namespace GameCore.CustomExtensions.UIAnimationsPresets.Button
             if (!initialized) 
                 return;
             
-            targetButton.transform.localScale = initialScale;
+            transform.localScale = initialScale;
 
             if (deactivated)
             {
