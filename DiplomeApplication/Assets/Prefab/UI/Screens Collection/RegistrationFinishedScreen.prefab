@@ -819,6 +819,7 @@ GameObject:
   - component: {fileID: 2566307138325107268}
   - component: {fileID: 2566307138325107269}
   - component: {fileID: 2566307138325107270}
+  - component: {fileID: 4915916409987122682}
   m_Layer: 5
   m_Name: RegistrationFinishedScreen
   m_TagString: Untagged
@@ -862,7 +863,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04f797dd26724376af2791547dbeb114, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenListeners: []
+  screenListeners:
+  - {fileID: 4915916409987122682}
   tweenPlayers:
   - {fileID: 2566307138243061602}
   - {fileID: 2566307137920841238}
@@ -881,6 +883,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _screenToMove: {fileID: 0}
   _selectableButton: {fileID: 2566307138163232931}
+--- !u!114 &4915916409987122682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2566307138325107131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def247d194a444d68e06a101c71788df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patientsQueueText: {fileID: 2566307139038512120}
+  _minQueueDelay: 8
+  _maxQueueDelay: 13
 --- !u!1 &2566307138327847022
 GameObject:
   m_ObjectHideFlags: 0

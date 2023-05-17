@@ -1,4 +1,6 @@
-﻿using GameCore.ScreenManagement.ScreenCollection;
+﻿using Game.Patient.Interface;
+using Game.Patient.PatientControl;
+using GameCore.ScreenManagement.ScreenCollection;
 using GameCore.Services.Infrastructure;
 using UI.MainMenu.Infrastructure;
 using UnityEngine;
@@ -19,10 +21,14 @@ namespace UI.MainMenu.ExaminationResultsScreen
         [SerializeField] private UIScreen _registerScreenToMove;
 
         private MainMenuScreensControl mainMenuScreensControl;
+        private PatientsControlService patientsControlService;
+        private ActivePatientControlService activePatientControlService;
 
         private void Awake()
         {
             mainMenuScreensControl = MonoBehaviourServicesContainer.GetService<MainMenuScreensControl>();
+            patientsControlService = MonoBehaviourServicesContainer.GetService<PatientsControlService>();
+            activePatientControlService = MonoBehaviourServicesContainer.GetService<ActivePatientControlService>();
             
             _retryButton.onClick.AddListener(OnRetryButtonClicked);
             _registerButton.onClick.AddListener(OnRegisterButtonClicked);
@@ -31,7 +37,15 @@ namespace UI.MainMenu.ExaminationResultsScreen
         private void OnRetryButtonClicked() 
             => mainMenuScreensControl.ActivateScreen(_retryScreenToMove);
 
-        private void OnRegisterButtonClicked() 
-            => mainMenuScreensControl.ActivateScreen(_registerScreenToMove);
+        private void OnRegisterButtonClicked()
+        {
+            mainMenuScreensControl.ActivateScreen(_registerScreenToMove);
+
+            IPatient activePatient = activePatientControlService.ActivePatient;
+            if (activePatient == null)
+                return;
+            
+            patientsControlService.AddPatient(activePatient);
+        }
     }
 }

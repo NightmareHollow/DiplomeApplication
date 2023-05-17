@@ -924,6 +924,7 @@ GameObject:
   - component: {fileID: 3862791921379102093}
   - component: {fileID: 3862791921379102092}
   - component: {fileID: 3862791921379102195}
+  - component: {fileID: 7840778198750891356}
   m_Layer: 5
   m_Name: QueuePlaceCheckScreen
   m_TagString: Untagged
@@ -967,7 +968,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87742018121f4c5b8c7495d8dc03ea28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  screenListeners: []
+  screenListeners:
+  - {fileID: 7840778198750891356}
   tweenPlayers:
   - {fileID: 3862791921114748744}
   - {fileID: 3862791920280055474}
@@ -986,6 +988,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _screenToMove: {fileID: 0}
   _selectableButton: {fileID: 3862791921814440571}
+--- !u!114 &7840778198750891356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3862791921379102094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: def247d194a444d68e06a101c71788df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _patientsQueueText: {fileID: 3862791921108876088}
+  _minQueueDelay: 8
+  _maxQueueDelay: 13
 --- !u!1 &3862791921435346291
 GameObject:
   m_ObjectHideFlags: 0

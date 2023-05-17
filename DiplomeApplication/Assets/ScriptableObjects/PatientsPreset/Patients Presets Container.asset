@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7a01c6b4c394222af26ff00eafbfef1, type: 3}
+  m_Name: Patients Presets Container
+  m_EditorClassIdentifier: 
+  _folderToLoad: {fileID: 102900000, guid: bdf0cbaf2fe401145a74e57ffaf3c342, type: 3}
+  _patientPresetConfigs:
+    list:
+    - key: 1
+      value: {fileID: 11400000, guid: 5b286bd4cb476f14c9f8231f11485b48, type: 2}
+    - key: 2
+      value: {fileID: 11400000, guid: d5568b20d23c31d438cab1585b1b4ab9, type: 2}
+    - key: 3
+      value: {fileID: 11400000, guid: fd818d117e2549f45889801920a0d267, type: 2}
+    - key: 4
+      value: {fileID: 11400000, guid: b97a3a5aa7bb24f48ba1ddbf632cb38f, type: 2}

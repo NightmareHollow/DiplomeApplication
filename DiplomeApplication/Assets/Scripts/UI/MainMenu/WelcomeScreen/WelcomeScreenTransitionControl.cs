@@ -14,6 +14,8 @@ namespace UI.MainMenu.WelcomeScreen
 
         [SerializeField] private UIScreen _screenToMove;
 
+        [SerializeField] private WelcomeScreenPatientInitControl _welcomeScreenPatientInitControl;
+
         private MainMenuScreensControl mainMenuScreensControl;
         
         private Coroutine inputRoutine;
@@ -38,7 +40,7 @@ namespace UI.MainMenu.WelcomeScreen
         {
             while (activated)
             {
-                if (Input.GetKeyDown(KeyCode.Q))
+                if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Mouse2))
                 {
                     OnChangeScreenInputRegistered();
                 }
@@ -55,6 +57,7 @@ namespace UI.MainMenu.WelcomeScreen
             activated = false;
             
             mainMenuScreensControl.ActivateScreen(_screenToMove);
+            _welcomeScreenPatientInitControl.ActivatePatient();
         }
         
         private void Initialize()

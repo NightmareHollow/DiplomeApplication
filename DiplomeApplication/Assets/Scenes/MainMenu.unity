@@ -1363,6 +1363,10 @@ PrefabInstance:
       propertyPath: _screenToMove
       value: 
       objectReference: {fileID: 631092085}
+    - target: {fileID: 8098038307069956362, guid: 6d645821c3e987240a32ab59279c02f3, type: 3}
+      propertyPath: _activationDelay
+      value: 12
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6d645821c3e987240a32ab59279c02f3, type: 3}
 --- !u!1001 &8171795191247617195
